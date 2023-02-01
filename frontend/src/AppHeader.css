@@ -1,8 +1,23 @@
 .App-header {
     background-color: white; 
     width: 75vw;
+    max-height: 3ex;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+
+  .Cart-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .Searchbar {
+    width:50%;
+  }
+  .Searchbar-input {
+    min-width: 75%;
   }
