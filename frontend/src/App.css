@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  background-color: white;
+  width: 75vw;
+  min-height: 90vh;
+  border: 1px solid black;
+  justify-content: center;
+}
+
