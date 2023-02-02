@@ -1,0 +1,11 @@
+.App-productlist {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+.App-product {
+    border: 1px solid black;
+    padding: 1ex;
+}
