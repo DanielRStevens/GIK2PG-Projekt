@@ -8,14 +8,14 @@ function AppProductList() {
   ]);
 
   return (
-    <div class="App-productlist">
+    <div className="App-productlist">
         {products && products.map((product) =>
-          <div class="App-product">
+          <div className="App-product">
             <a href={'/product/'+product.id}>
               <img src={product.imageurl} alt=""/>
               <b>{product.name} {product.price}kr</b>
               <p>{product.author}</p>
-              <p class="app-productdescription">{product.description}</p>
+              <p className="app-productdescription">{product.description}</p>
             </a>
           </div>
         )}

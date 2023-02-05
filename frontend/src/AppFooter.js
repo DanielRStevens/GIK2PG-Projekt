@@ -5,14 +5,14 @@ import {AiFillInstagram} from "react-icons/ai";
 import React from 'react';
 function AppFooter() {
   return (
-    <footer class="App-footer">
-        <div class="footer-left">
+    <footer className="App-footer">
+        <div className="footer-left">
           <h3>DalaVintage</h3>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
            </div>
 
-           <div class="footer-right">
+           <div className="footer-right">
             <h3>Follow us</h3>
             <a href="#fb"><AiFillFacebook/></a>
             <a href="#tw"><AiFillTwitterCircle/></a>
