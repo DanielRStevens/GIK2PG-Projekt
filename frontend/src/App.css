@@ -1,11 +1,16 @@
 .App {
   text-align: center;
-  flex-direction: column;
+  flex-direction: row;
   align-content: center;
   background-color: white;
   width: 75vw;
-  min-height: 90vh;
+  min-height: 110vh;
   border: 1px solid black;
   justify-content: center;
 }
 
+.App-logo {
+  min-width:200px;
+  width:12vw;
+  align-self: flex-start;
+}

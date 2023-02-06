@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 4000;
+const fs = require("fs").promises;
 
 
 app
@@ -8,18 +8,31 @@ app
 .use(express.urlencoded({extended: false}))
 .use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-ALlow-Headers", "*");
-  res.header("Access-Control-ALlow-Methods", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header("Access-Control-Allow-Methods", "*");
 
   next();
 });
 
-app.get('/home')
+/*app.get("/", (req, res) => {
+  res.send("Hej varlden123");
+});
+*/
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
+app.get('/', async (req, res) => {
+try{
+  const homepage = await fs.readFile(".frontend/AppProductList.js");
+  res.send(JSON.parse(homepage));
+}
+  catch (error) {
+    res.status(500).send({ error });
+  }
+
+});
+
+
+const port = process.env.PORT || 4000
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`server at http://localhost:${port}`);
 })

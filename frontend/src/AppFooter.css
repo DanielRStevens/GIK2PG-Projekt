@@ -6,6 +6,9 @@
     justify-content: space-evenly;
     align-items: center;
   }
+  .App-footerlogo {
+    width:100px;
+  }
 
 .footer-left,
 .footer-right {

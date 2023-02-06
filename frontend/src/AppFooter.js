@@ -2,12 +2,13 @@ import './AppFooter.css';
 import {AiFillFacebook} from "react-icons/ai";
 import {AiFillTwitterCircle} from "react-icons/ai";
 import {AiFillInstagram} from "react-icons/ai";
+import logo from './images/dalavintage-cropped.png'
 import React from 'react';
 function AppFooter() {
   return (
     <footer className="App-footer">
         <div className="footer-left">
-          <h3>DalaVintage</h3>
+          <img src={logo} alt="DalaVintage Vintage Bookstore" className="App-footerlogo"/>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
            </div>

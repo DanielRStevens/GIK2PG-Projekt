@@ -6,6 +6,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    position: fixed;
+    border: 1px solid black;
 
   }
 

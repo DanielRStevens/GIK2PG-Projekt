@@ -1,11 +1,12 @@
 import './App.css';
+import logo from './images/dalavintage-low-resolution-logo-color-on-transparent-background_2.png'
 import AppProductList from './AppProductList';
 
 function App() {
   return (
     <div className="App">
-      <div className="App-logo"></div>
-      <div className="App-categories">New text</div>
+      <img src={logo} alt="Logo" className="App-logo"/>
+      <div className="App-categories">NEW TEXT</div>
       <AppProductList/>
     </div>
   );

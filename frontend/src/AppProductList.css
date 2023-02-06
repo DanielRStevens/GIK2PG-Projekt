@@ -1,5 +1,4 @@
 .App-productlist {
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -8,4 +7,21 @@
 .App-product {
     border: 1px solid black;
     padding: 1ex;
+    max-width: 33%;
+    max-height: 42ex;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.App-product * {
+    margin: 0;
+}
+.App-product a {
+    color: black;
+    text-decoration: none;
+}
+.App-productimage {
+    max-height: 50%;
+}
+.App-productdescription {
+    text-align: justify;
 }

@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("../images/1920s-wallpaper.png");
+  background-image: url("./images/1920s-wallpaper.png");
   background-repeat: repeat;
 
   display:flex;
@@ -16,4 +16,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.Header-space{
+  height: 3ex;
 }
