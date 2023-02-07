@@ -3,11 +3,13 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content:space-evenly;
+    margin: 1em;
 }
 .App-product {
     border: 1px solid black;
     padding: 1ex;
-    max-width: 33%;
+    margin-bottom: 1ex;
+    max-width: 30%;
     max-height: 42ex;
     overflow:hidden;
     text-overflow: ellipsis;
