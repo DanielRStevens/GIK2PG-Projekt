@@ -4,6 +4,7 @@
   align-content: center;
   background-color: white;
   width: 75vw;
+  min-height: 90vh;
   border: 1px solid black;
   justify-content: center;
 }
@@ -12,4 +13,26 @@
   min-width:200px;
   width:12vw;
   align-self: flex-start;
+}
+
+.App-categories {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  width:100%;
+  padding: 0;
+}
+.App-categories a {
+  list-style-type: none;
+  color: black;
+  text-decoration: none;
+  height: 100%;
+  width: 11em;
+  border-bottom: 1px solid black;
+}
+.Activecategory a:hover {
+  background: lightgrey;
+}
+.App-categories .Activecategory {
+  background-color: grey;
 }

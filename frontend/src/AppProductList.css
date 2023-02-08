@@ -9,8 +9,8 @@
     border: 1px solid black;
     padding: 1ex;
     margin-bottom: 1ex;
-    max-width: 30%;
-    max-height: 42ex;
+    width: 21ex;
+    height: 42ex;
     overflow:hidden;
     text-overflow: ellipsis;
 }
@@ -23,6 +23,7 @@
 }
 .App-productimage {
     max-height: 50%;
+
 }
 .App-productdescription {
     text-align: justify;
