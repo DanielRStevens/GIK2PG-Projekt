@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const fs = require("fs").promises;
 
+var getAllProducts = require("./routes/getAllProducts");
 
 app
 .use(express.json())
@@ -14,13 +15,18 @@ app
   next();
 });
 
-/*app.get("/", (req, res) => {
+
+
+app.get("/", (req, res) => {
   res.send("Hej varlden123");
 });
-*/
 
 
-app.get('/', async (req, res) => {
+app.use("/getAllProducts", getAllProducts);
+
+
+
+/*app.get('/', async (req, res) => {
 try{
   const homepage = await fs.readFile(".frontend/AppProductList.js");
   res.send(JSON.parse(homepage));
@@ -30,7 +36,7 @@ try{
   }
 
 });
-
+*/
 
 const port = process.env.PORT || 4000
 app.listen(port, () => {
