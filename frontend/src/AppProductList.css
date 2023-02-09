@@ -6,7 +6,7 @@
     margin: 1em;
 }
 .App-product {
-    border: 1px solid black;
+    border: 1px solid lavender;
     padding: 1ex;
     margin-bottom: 1ex;
     width: 21ex;
@@ -26,5 +26,13 @@
 
 }
 .App-productdescription {
-    text-align: justify;
+    padding: 1rem;
 }
+
+.App-logo {
+    min-width:200px;
+    width:12vw;
+    height: 12vw;
+    margin-right: 2ex;
+    display:block;
+  }

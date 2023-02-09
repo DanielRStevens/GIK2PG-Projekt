@@ -1,8 +1,12 @@
 import './AppProductList.css';
-import placeholder from './images/olivia-book-md.png';
+//import './css/bootstrap.min.css';
+import placeholder from './images/Books_Silhouette.png';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
+import logo from "./images/dalavintage-low-resolution-logo-color-on-transparent-background_2.png";
 function AppProductList() {
 
   /*//Placeholder data
@@ -40,18 +44,20 @@ function AppProductList() {
   //};
   //getAllBooks();
   return (
-    <div className="App-productlist">
+    <Row className="App-productlist">
+    <img src={logo} alt="Logo" className="App-logo" />
         { products.map((product) =>
-          <div className="App-product">
+          <Col sm={6} md={4} lg={3} className="mb-3 App-product">
             <a href={'/product/'+product.Id}>
               <img src={product.ImageUrl?product.ImageUrl:placeholder} alt="" className="App-productimage"/>
-              <h2>{product.Name} {product.Price}kr</h2>
+              <h2>{product.Name}</h2>
               <p>{product.Author}</p>
-              <p className="app-productdescription">{product.Description}</p>
+              <p>{product.Price}kr</p>
+              {/* <p className="app-productdescription">{product.Description}</p> */}
             </a>
-          </div>
+          </Col>
         )}
-    </div>
+      </Row>
   );
 }
 

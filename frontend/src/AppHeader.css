@@ -1,7 +1,7 @@
 .App-header {
     background-color: white; 
     width: 75vw;
-    max-height: 3ex;
+    max-height: 6ex;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,16 +9,26 @@
     position: fixed;
     border: 1px solid black;
 
+    font-size: large;
+
   }
 
-  
+
 
 .Searchbar{
   display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Searchbar * {
+  height:6ex;
+  min-width: 50vw;
+}
+.Searchbar-input {
+  border-radius: 3ex;
+  border: 1px solid black;
+  padding: 0 0 0 1em;
 }
 
 
@@ -36,9 +46,14 @@
     align-items: center;
   }
 
-  .Searchbar {
-    width:50%;
+  .headerRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    font-size: larger;
   }
-  .Searchbar-input {
-    min-width: 75%;
+  .Spacer {
+    width:1em;
   }

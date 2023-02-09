@@ -9,11 +9,6 @@
   justify-content: center;
 }
 
-.App-logo {
-  min-width:200px;
-  width:12vw;
-  align-self: flex-start;
-}
 
 .App-categories {
   display:flex;

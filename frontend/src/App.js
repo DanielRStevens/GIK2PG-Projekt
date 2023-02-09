@@ -5,7 +5,7 @@ import AppProductList from "./AppProductList";
 function App() {
   return (
     <div className="App">
-      <img src={logo} alt="Logo" className="App-logo" />
+      {/* <img src={logo} alt="Logo" className="App-logo" /> */}
       <ul className="App-categories">
         <a href="#new">NEW</a>
         <a href="#deals">DEALS</a>
