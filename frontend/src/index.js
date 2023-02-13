@@ -5,14 +5,18 @@ import App from './App';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppHeader/>
-    <div className='Header-space'></div>
-    <App />
-    <AppFooter/>
+    <BrowserRouter>
+      <AppHeader/>
+      <div className='Header-space'></div>
+      <App />
+      <AppFooter/>
+    </BrowserRouter>
+    
   </React.StrictMode>
 );
 
