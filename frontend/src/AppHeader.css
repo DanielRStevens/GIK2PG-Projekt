@@ -1,6 +1,6 @@
 .App-header {
     background-color: white; 
-    width: 75vw;
+    width: 50vw;
     max-height: 6ex;
     display: flex;
     flex-direction: row;
@@ -23,7 +23,7 @@
 }
 .Searchbar * {
   height:6ex;
-  min-width: 50vw;
+  min-width: 30vw;
 }
 .Searchbar-input {
   border-radius: 3ex;
