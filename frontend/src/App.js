@@ -10,8 +10,8 @@ function App() {
   return (
       <Routes>
         {/* Casual customer */}
-        <Route index element={<ProductScreen/>} />
-        <Route path="/product/:Id" element={<DetailScreen/>}/>
+        <Route path="/" element={<ProductScreen/>} />
+        <Route path="/product/:id" element={<DetailScreen />} />
         <Route path="/search/*" element={<NoMatch/>}/>
         <Route path="/deals" element={<NoMatch/>}/>
         <Route path="/new" element={<NoMatch/>}/>

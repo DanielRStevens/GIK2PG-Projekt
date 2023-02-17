@@ -62,7 +62,7 @@ function AppProductList() {
           <h2>{product.Name}</h2>
           <p>{product.Author}</p>
           <p>{product.Price}kr</p>
-          {/* <p className="app-productdescription">{product.Description}</p> */}
+           <p className="app-productdescription">{product.Description}</p> 
         </Col>
       ))}
     </Row>

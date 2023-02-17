@@ -3,6 +3,7 @@ const app = express();
 const fs = require("fs").promises;
 
 var getAllProducts = require("./routes/getAllProducts");
+var getProductById = require("./routes/getProductById/:id");
 
 app
 .use(express.json())
@@ -24,7 +25,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/getAllProducts", getAllProducts);
-app.use("/getProductById", ggetProductById);
+app.use("/getProductById", getProductById);
 
 
 
@@ -39,7 +40,6 @@ try{
 
 });
 */
-
 const port = process.env.PORT || 4000
 app.listen(port, () => {
   console.log(`server at http://localhost:${port}`);

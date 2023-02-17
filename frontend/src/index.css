@@ -20,3 +20,6 @@ code {
 .Header-space{
   height: 6ex;
 }
+.App-productimage{
+  max-width: 60%;
+}
