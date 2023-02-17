@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
+import AppProductList from './AppProductList';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
