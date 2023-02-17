@@ -18,7 +18,7 @@ const reducer = (state, action) => {
     }
   };
 
-function ProductScreen(){
+function DetailScreen(){
     const params = useParams();
     const {Id} = params;
 
@@ -40,11 +40,11 @@ function ProductScreen(){
         fetchData();
       }, [Id]);
     return (
-       loading? <div>Loading...</div>
-       : error? <div>{error}</div>
-       :
-       <div>{product.name}</div>
+      loading? <div>Loading...</div>
+      :error? <div>{error}</div>
+      :
+       <div>{product.Name}</div>
    
     );
-}
-export default ProductScreen;
+} 
+export default DetailScreen;

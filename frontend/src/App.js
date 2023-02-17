@@ -2,6 +2,7 @@ import "./App.css";
 import logo from "./images/dalavintage-low-resolution-logo-color-on-transparent-background_2.png";
 import AppProductList from "./AppProductList";
 //import ProductScreen from './screens/ProductScreen';
+import DetailScreen from "./screens/DetailScreen";
 import {Routes, Route, Outlet, Link} from "react-router-dom";
 import {Helmet} from "react-helmet";
 
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         {/* Casual customer */}
         <Route index element={<ProductScreen/>} />
-        <Route path="/product/*" element={<NoMatch/>}/>
+        <Route path="/product/:Id" element={<DetailScreen/>}/>
         <Route path="/search/*" element={<NoMatch/>}/>
         <Route path="/deals" element={<NoMatch/>}/>
         <Route path="/new" element={<NoMatch/>}/>

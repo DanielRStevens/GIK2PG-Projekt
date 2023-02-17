@@ -2,7 +2,7 @@ import './AppFooter.css';
 import {AiFillFacebook} from "react-icons/ai";
 import {AiFillTwitterCircle} from "react-icons/ai";
 import {AiFillInstagram} from "react-icons/ai";
-import logo from './images/dalavintage-cropped.png'
+import logo from './images/dalavintage-cropped.png';
 import React from 'react';
 function AppFooter() {
   return (

@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/esm/ListGroupItem";
-//import {Helmet} from 'react-helmet-async';
+//import {Helmet} from 'react-helmet';
 
 import logo from "./images/dalavintage-low-resolution-logo-color-on-transparent-background_2.png";
 function AppProductList() {

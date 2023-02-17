@@ -22,7 +22,9 @@ app.get("/", (req, res) => {
 });
 
 
+
 app.use("/getAllProducts", getAllProducts);
+app.use("/getProductById", ggetProductById);
 
 
 
