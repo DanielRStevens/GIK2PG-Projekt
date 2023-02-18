@@ -3,7 +3,7 @@ const app = express();
 const fs = require("fs").promises;
 
 var getAllProducts = require("./routes/getAllProducts");
-var getProductById = require("./routes/getProductById/:id");
+var getProductById = require("./routes/getProductById");
 
 app
 .use(express.json())

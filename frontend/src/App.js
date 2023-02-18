@@ -4,10 +4,13 @@ import AppProductList from "./AppProductList";
 //import ProductScreen from './screens/ProductScreen';
 import DetailScreen from "./screens/DetailScreen";
 import {Routes, Route, Outlet, Link} from "react-router-dom";
+import Container from 'react-bootstrap/Container';
 import {Helmet} from "react-helmet";
 
 function App() {
   return (
+       <main>
+        <Container className="mt-3">
       <Routes>
         {/* Casual customer */}
         <Route path="/" element={<ProductScreen/>} />
@@ -37,6 +40,8 @@ function App() {
         {/* 404 error */}
         <Route path="*" element={<NoMatch/>}/>
       </Routes>
+      </Container>
+      </main>
 
   );
 }
