@@ -7,17 +7,19 @@ import AppFooter from './AppFooter';
 import AppProductList from './AppProductList';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { StoreProvider } from './screens/StoreContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <StoreProvider>
     <BrowserRouter>
       <AppHeader/>
       <div className='Header-space'></div>
       <App />
       <AppFooter/>
     </BrowserRouter>
-    
+    </StoreProvider>
   </React.StrictMode>
 );
 

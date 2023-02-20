@@ -4,6 +4,7 @@ const fs = require("fs").promises;
 
 var getAllProducts = require("./routes/getAllProducts");
 var getProductById = require("./routes/getProductById");
+var getAllReviewsByProductId = require("./routes/getAllReviewsByProductId");
 
 app
 .use(express.json())
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 
 app.use("/getAllProducts", getAllProducts);
 app.use("/getProductById", getProductById);
+app.use("/getAllReviewsByProductId", getAllReviewsByProductId);
 
 
 

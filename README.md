@@ -16,5 +16,13 @@ We started with Installing the necessary tools
  3. Create React App 
 
 
- ##Changed the footer 
+
  Created a detailscreen for the product so that we can fetch a specific product from the backend using an id of a specific product 
+
+ Implement Add to Cart 
+ Create React Context 
+ define reducer 
+ create store provider 
+ implement add to cart  button click handler
+
+  ##Changed the footer 

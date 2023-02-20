@@ -1,59 +1,59 @@
 .App-header {
-    background-color: white; 
-    width: 50vw;
-    max-height: 6ex;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    position: fixed;
-    border: 1px solid black;
+  background-color: white; 
+  width: 100vw;
+  max-height: 6ex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid black;
+  font-size: large;
+}
 
-    font-size: large;
-
-  }
-
-
-
-.Searchbar{
+.Searchbar {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
+
 .Searchbar * {
-  height:6ex;
+  height: 6ex;
   min-width: 30vw;
 }
+
 .Searchbar-input {
   border-radius: 3ex;
   border: 1px solid black;
   padding: 0 0 0 1em;
 }
 
-
-.Login{
-  
+.Login {
   display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: right;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
 }
 
-  .Cart-icon {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+.Cart-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-  .headerRight {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-    font-size: larger;
-  }
-  .Spacer {
-    width:1em;
-  }
+.headerRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  font-size: larger;
+}
+
+.Spacer {
+  width: 1em;
+}

@@ -6,6 +6,8 @@ import DetailScreen from "./screens/DetailScreen";
 import {Routes, Route, Outlet, Link} from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import {Helmet} from "react-helmet";
+import CartScreen from "./screens/CartScreen";
+import ReviewScreen from "./screens/ReviewScreen";
 
 function App() {
   return (
@@ -15,12 +17,13 @@ function App() {
         {/* Casual customer */}
         <Route path="/" element={<ProductScreen/>} />
         <Route path="/product/:id" element={<DetailScreen />} />
+        <Route path="/cart" element={<CartScreen />} />
         <Route path="/search/*" element={<NoMatch/>}/>
         <Route path="/deals" element={<NoMatch/>}/>
         <Route path="/new" element={<NoMatch/>}/>
         
         {/* Logged in customer */}
-        <Route path="/product/*/review" element={<NoMatch/>}/>
+        <Route path="/product/:id/review" element={<ReviewScreen/>}/>
         <Route path="/order/" element={<NoMatch/>}/>
         <Route path="/payment/" element={<NoMatch/>}/>
         <Route path="/login/" element={<NoMatch/>}/>
