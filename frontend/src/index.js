@@ -7,7 +7,7 @@ import AppFooter from './AppFooter';
 import AppProductList from './AppProductList';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreProvider } from './screens/StoreContext';
+import { StoreProvider } from './StoreContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

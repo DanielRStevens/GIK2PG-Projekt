@@ -27,9 +27,7 @@ code {
 .btn-primary {
   background-color: #f0c040;
   color: black;
-  border-radius: 5px;
-  height: 2rem;
-  padding: 0.5rem 1rem;
+  
 }
 
 .detail-container {
@@ -37,5 +35,9 @@ code {
 }
 .App-productimage{
   max-width: 40%;
+}
+
+.img-thumbnail {
+  height: 80px;
 }
 

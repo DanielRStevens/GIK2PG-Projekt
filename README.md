@@ -26,3 +26,9 @@ We started with Installing the necessary tools
  implement add to cart  button click handler
 
   ##Changed the footer 
+
+## Customer requirements
+  * Brief non-technical overview that they can understand as admin and users
+  * Technical documentation for future developers
+
+## Running the server

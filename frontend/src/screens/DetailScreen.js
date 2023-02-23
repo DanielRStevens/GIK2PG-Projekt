@@ -8,7 +8,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
-import { StoreContext } from "./StoreContext";
+import { StoreContext } from "../StoreContext";
+import placeholder from "../images/Books_Silhouette.png";
 
 
 function DetailScreen() {
@@ -37,14 +38,15 @@ function DetailScreen() {
     ctxDispatch({
       type:'ADD_ITEM',
       payload: {...product, quantity},
-    })
+    });
+    navigate('/cart');
   };
   return (
     <div className="detail-container">
       <Row>
         <Col md={6}>
           <img
-            src={product.ImageUrl}
+            src={product.ImageUrl ? product.ImageUrl : placeholder}
             alt="{product.Name}"
             className="App-productimage"
           />
@@ -77,7 +79,8 @@ function DetailScreen() {
                 {product.countInStock > 0 && (
                 <ListGroupItem>
                   <div className="d-grid">
-                    <Button onClick={HandlerAddToCart}>Add to Cart</Button>
+                    <Button onClick={HandlerAddToCart}> {' '}
+                    Add to Cart</Button>
                   </div>
                 </ListGroupItem>
                 )}

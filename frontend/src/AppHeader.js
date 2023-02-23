@@ -3,7 +3,7 @@ import {BsFillCartFill} from "react-icons/bs";
 import {BsFillQuestionCircleFill} from "react-icons/bs";
 import Badge from 'react-bootstrap/esm/Badge';
 import { useContext } from 'react';
-import { StoreContext } from './screens/StoreContext';
+import { StoreContext } from './StoreContext';
  function AppHeader() {
   const {state} = useContext(StoreContext);
   const {cart} = state;
@@ -13,7 +13,7 @@ import { StoreContext } from './screens/StoreContext';
             <input type="text" placeholder="Search..." className="Searchbar-input"></input>
         </div>
         <div className="headerRight"> 
-          <a href="#Cart" className="Cart-icon">
+          <a href="/cart" className="Cart-icon">
             Cart {cart.cartItems.length > 0 && (
               <Badge pill bg="danger">{cart.cartItems.reduce((a,c) => a + c.quantity, 0)}</Badge>
             )}
