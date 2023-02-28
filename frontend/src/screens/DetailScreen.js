@@ -10,6 +10,8 @@ import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import { StoreContext } from "../StoreContext";
 import placeholder from "../images/Books_Silhouette.png";
+import '../css/DetailScreen.css';
+import ReviewScreen from "./ReviewScreen";
 
 
 function DetailScreen() {
@@ -20,7 +22,7 @@ function DetailScreen() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:4000/getProductById/${id}`);
+      const response = await axios.get(`http://localhost:4000/product/${id}`);
       setProduct(response.data.data[0]);
     };
     fetchData();
@@ -30,14 +32,14 @@ function DetailScreen() {
   const HandlerAddToCart = async() =>{
     const existItem = cart.cartItems.find((x) => x.id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
-    const {data} = await axios.get(`http://localhost:4000/getProductById/${id}`);
+    const {data} = await axios.get(`http://localhost:4000/product/${id}`);
     if (data.countInStock < quantity) {
       window.alert('The product is currently out of stock!');
       return;
     }
     ctxDispatch({
       type:'ADD_ITEM',
-      payload: {...product, quantity},
+      payload: {...product, quantity: 1},
     });
     navigate('/cart');
   };
@@ -57,7 +59,7 @@ function DetailScreen() {
               <h1>{product.Name}</h1>
             </ListGroupItem>
             <ListGroupItem>
-              <h2>{product.Author}</h2>
+             Author: {product.Author}
             </ListGroupItem>
             <ListGroupItem>Price: {product.Price}kr</ListGroupItem>
             <ListGroupItem>Description: {product.Description}</ListGroupItem>
@@ -69,8 +71,9 @@ function DetailScreen() {
               <ListGroup variant="flush">
                 <ListGroupItem>
                   <Row>
-                    <Col>Status: {product.countInStock > 0 ? (
-                        <Badge bg="success">Available</Badge>
+                    <Col>Status:</Col>
+                    <Col> {product.countInStock > 0 ? (
+                        <Badge bg="success">In stock</Badge>
                       ) : (
                         <Badge bg="danger">Unavailable</Badge>
                       )}</Col>
@@ -79,7 +82,7 @@ function DetailScreen() {
                 {product.countInStock > 0 && (
                 <ListGroupItem>
                   <div className="d-grid">
-                    <Button onClick={HandlerAddToCart}> {' '}
+                    <Button onClick={HandlerAddToCart} variant="primary"> {' '}
                     Add to Cart</Button>
                   </div>
                 </ListGroupItem>
@@ -90,6 +93,7 @@ function DetailScreen() {
         </Col>
       </Row>
       <Row>
+        <ReviewScreen></ReviewScreen>
         <ListGroup>
         </ListGroup>
       </Row>

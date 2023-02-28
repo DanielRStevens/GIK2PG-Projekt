@@ -8,7 +8,7 @@
 .App-product {
     border: 1px solid lavender;
     padding: 1ex;
-    margin-bottom: 1ex;
+    margin: 1ex;
     width: 21ex;
     height: 42ex;
     overflow:hidden;
@@ -26,12 +26,11 @@
 
 }
 .App-productdescription {
-    padding: 1rem;
+     padding: 1rem;
 }
 
 .App-logo {
-    min-width:200px;
-    width:12vw;
+    max-height: 30vh;
     margin-right: 2ex;
     display:block;
   }

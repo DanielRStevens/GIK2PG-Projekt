@@ -10,7 +10,7 @@ function ReviewScreen() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
-        `http://localhost:4000/getAllReviewsByProductId/${id}`
+        `http://localhost:4000/review/product/${id}`
       );
       setReviews(result.data.data);
     };

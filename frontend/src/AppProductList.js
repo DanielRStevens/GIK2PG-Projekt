@@ -14,7 +14,7 @@ function AppProductList() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://localhost:4000/getAllProducts");
+      const result = await axios.get("http://localhost:4000/product/");
       setProducts(result.data.data);
     };
     fetchData();
@@ -40,7 +40,6 @@ function AppProductList() {
               alt=""
               className="App-productimage"
             />
-          </a>
           {/* <Col><ListGroup variant ="flush">
                 <ListGroup.Item>
                   
@@ -63,6 +62,7 @@ function AppProductList() {
           <p>{product.Author}</p>
           <p>{product.Price}kr</p>
            <p className="app-productdescription">{product.Description}</p> 
+          </a>
         </Col>
       ))}
     </Row>

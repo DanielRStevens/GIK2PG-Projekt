@@ -1,0 +1,12 @@
+.detail-container {
+   padding:0;
+   margin:0
+}
+.btn-primary {
+   background-color: #f0c040;
+   color: black;
+ }
+ .App-productimage{
+   max-width: 100%;
+ }
+ 

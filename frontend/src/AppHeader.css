@@ -5,15 +5,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   border: 1px solid black;
   font-size: large;
+  z-index: 100;
 }
-
+.App-headerlogo {
+  height:3em;
+}
 .Searchbar {
   display: flex;
   flex-direction: row;

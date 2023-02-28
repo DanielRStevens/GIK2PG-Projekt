@@ -12,7 +12,7 @@ class Api{
 
 }
 
-//post
+//Create
 router.post('/', async (req, res) => {
     try {
         const newData = new db(req.body);
@@ -24,21 +24,10 @@ router.post('/', async (req, res) => {
 });
 
 
-//get
-router.get('/', async (req, res) => {
-    try {
-        const allData = await Data.find();
-        res.json(allData);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
-
-
-//put
+//Update
 router.put('/:id', async (req, res) => {
     try {
-        const updatedData = await Data.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedData = await db.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.json(updatedData);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -46,10 +35,10 @@ router.put('/:id', async (req, res) => {
 });
 
 
-//delete
+//Delete
 router.delete('/:id', async (req, res) => {
     try {
-        const deletedData = await Data.findByIdAndDelete(req.params.id);
+        const deletedData = await db.findByIdAndDelete(req.params.id);
         res.json(deletedData);
     } catch (err) {
         res.status(500).json({ message: err.message });

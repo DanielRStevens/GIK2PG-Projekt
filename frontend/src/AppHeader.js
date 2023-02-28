@@ -4,11 +4,19 @@ import {BsFillQuestionCircleFill} from "react-icons/bs";
 import Badge from 'react-bootstrap/esm/Badge';
 import { useContext } from 'react';
 import { StoreContext } from './StoreContext';
+import logo from "./images/dalavintage-cropped.png";
+
  function AppHeader() {
   const {state} = useContext(StoreContext);
   const {cart} = state;
   return (
       <header className="App-header">
+        <a href="/">
+        <img
+          src={logo}
+          alt="DalaVintage Vintage Bookstore"
+          className="App-headerlogo"
+        /></a>
         <div className="Searchbar">
             <input type="text" placeholder="Search..." className="Searchbar-input"></input>
         </div>
