@@ -33,7 +33,7 @@ import logo from "./images/dalavintage-cropped.png";
           <a href="#Help"><BsFillQuestionCircleFill/></a>
           <div className='Spacer'></div>
           <div className="Login"> 
-            <p className="Login-prompt"> <a href="#Login">Log in</a> or <a href="#Register">Register</a></p>
+            <p className="Login-prompt"> <a href="/login">Log in</a> or <a href="/register">Register</a></p>
           </div>
         </div>
       </header>

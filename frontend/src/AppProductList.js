@@ -33,7 +33,7 @@ function AppProductList() {
     <Row className="App-productlist">
       <img src={logo} alt="Logo" className="App-logo" />
       {products.map((product) => (
-        <Col sm={6} md={4} lg={3} className="mb-3 App-product">
+        <Col key={product.id} sm={6} md={4} lg={3} className="mb-3 App-product">
           <a href={"/product/" + product.Id}>
             <img
               src={product.ImageUrl ? product.ImageUrl : placeholder}

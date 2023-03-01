@@ -32,12 +32,13 @@ function App() {
           <Route path="/search/*" element={<NoMatch />} />
           <Route path="/deals" element={<NoMatch />} />
           <Route path="/new" element={<NoMatch />} />
+          <Route path="/register" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
 
           {/* Logged in customer */}
           <Route path="/product/:id/review" element={<ReviewScreen />} />
-          <Route path="/order/" element={<NoMatch />} />
-          <Route path="/payment/" element={<KlarnaScreen />} />
-          <Route path="/login/" element={<NoMatch />} />
+          <Route path="/order" element={<NoMatch />} />
+          <Route path="/payment" element={<KlarnaScreen />} />
           <Route path="/product/*/create-review" element={<NoMatch />} />
           <Route path="/favorites" element={<NoMatch />} />
           <Route path="/order-history" element={<NoMatch />} />

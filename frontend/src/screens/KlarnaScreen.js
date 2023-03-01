@@ -2,7 +2,7 @@ import axios from "axios";
 
 async function KlarnaScreen() {    
     const resp = await axios.post(
-        `https://api.klarna.com/checkout/v3/orders`,
+        `https://api.playground.klarna.com/checkout/v3/orders`,
         {
             method: 'POST',
             headers: {

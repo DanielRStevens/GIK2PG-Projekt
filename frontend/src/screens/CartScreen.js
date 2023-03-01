@@ -3,7 +3,7 @@ import { StoreContext } from "../StoreContext";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Helmet } from "react-helmet";
@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function CartScreen() {
+  const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(StoreContext);
   const {
     cart: { cartItems },
@@ -32,6 +33,7 @@ export default function CartScreen() {
     ctxDispatch({ type: "REMOVE_ITEM", payload: product });
   };
 
+  
   return (
     <div>
       <Helmet>
@@ -88,6 +90,7 @@ export default function CartScreen() {
                       <Button
                         onClick={() => removeItemHandler(product)}
                         variant="light"
+                        disabled={product.quantity === product.countInStock}
                       >
                         <i className="fas fa-trash"></i>
                       </Button>
@@ -113,6 +116,7 @@ export default function CartScreen() {
                 <ListGroup.Item>
                   <div className="d-grid">
                     <Button
+                  
                       type="button"
                       variant="primary"
                       disabled={cartItems.length === 0}
