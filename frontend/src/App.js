@@ -10,15 +10,7 @@ import { Helmet } from "react-helmet";
 import CartScreen from "./screens/CartScreen";
 import ReviewScreen from "./screens/ReviewScreen";
 import KlarnaScreen from "./screens/KlarnaScreen";
-import LoginPage from './LoginPage';
-
-function LoginApp() {
-  return (
-    <div>
-      <LoginPage />
-    </div>
-  );
-}
+import SigninScreen from "./screens/SigninScreen";
 
 function App() {
   return (
@@ -29,11 +21,10 @@ function App() {
           <Route path="/" element={<ProductScreen />} />
           <Route path="/product/:id" element={<DetailScreen />} />
           <Route path="/cart" element={<CartScreen />} />
+          <Route path="/signin" element={<SigninScreen/>} />
           <Route path="/search/*" element={<NoMatch />} />
           <Route path="/deals" element={<NoMatch />} />
           <Route path="/new" element={<NoMatch />} />
-          <Route path="/register" element={<LoginPage />} />
-          <Route path="/login" element={<LoginPage />} />
 
           {/* Logged in customer */}
           <Route path="/product/:id/review" element={<ReviewScreen />} />
