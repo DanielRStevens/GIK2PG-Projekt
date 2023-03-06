@@ -17,7 +17,7 @@ We started with Installing the necessary tools
 
 
 
- Created a detailscreen for the product so that we can fetch a specific product from the backend using an id of a specific product 
+ Created a detailscreen for the product so that we can fetch a specific product from the backend using an id of a specific product  ##npm install react-helmet-async
 
  Implement Add to Cart 
  Create React Context 
@@ -25,7 +25,20 @@ We started with Installing the necessary tools
  create store provider 
  implement add to cart  button click handler
 
-  ##Changed the footer 
+  Create Cart Screen
+  create 2 columns 
+  display items list 
+  create action column
+
+  Complete Cart Screen
+  click handler for inc/dec item
+  click handler for remove item
+  click handler for checkout
+
+Create Signin Screen
+create sign in form 
+add email and password
+add signin button
 
 ## Customer requirements
   * Brief non-technical overview that they can understand as admin and users

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 
-export default function SigninScreen() {
+export default function RegisterScreen() {
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get('redirect');
   const redirect = redirectInUrl ? redirectInUrl : '/';
@@ -16,16 +16,20 @@ export default function SigninScreen() {
           <Form.Label>Email</Form.Label>
           <Form.Control type="email" required />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="username">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="username" required />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" required />
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Sign In</Button>
+          <Button type="submit">Register</Button>
         </div>
         <div className="mb-3">
-          New customer? {''}
-          <Link to={`/register?redirect=${redirect}`}>Create your account</Link>
+          Already have an account? {''}
+          <Link to={`/login?redirect=${redirect}`}>Log in</Link>
         </div>
       </Form>
     </Container>

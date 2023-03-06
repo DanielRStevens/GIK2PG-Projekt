@@ -11,6 +11,7 @@ import CartScreen from "./screens/CartScreen";
 import ReviewScreen from "./screens/ReviewScreen";
 import KlarnaScreen from "./screens/KlarnaScreen";
 import SigninScreen from "./screens/SigninScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/product/:id" element={<DetailScreen />} />
           <Route path="/cart" element={<CartScreen />} />
           <Route path="/signin" element={<SigninScreen/>} />
+          <Route path="/register" element={<RegisterScreen/>} />
           <Route path="/search/*" element={<NoMatch />} />
           <Route path="/deals" element={<NoMatch />} />
           <Route path="/new" element={<NoMatch />} />

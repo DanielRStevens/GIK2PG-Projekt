@@ -4,6 +4,7 @@ const fs = require("fs").promises;
 
 var productRoute = require("./routes/productRoute");
 var reviewRoute = require("./routes/reviewRoute");
+var userRoute = require('./routes/userRoute');
 
 app
 .use(express.json())
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 
 app.use("/product", productRoute);
 app.use("/review", reviewRoute);
+app.use('/user', userRoute);
 
 
 

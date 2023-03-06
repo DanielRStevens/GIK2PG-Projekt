@@ -1,3 +1,4 @@
+
 import { createContext, useReducer } from 'react';
 
 export const StoreContext = createContext();
@@ -41,4 +42,3 @@ export function StoreProvider(props) {
   const value = { state, dispatch };
   return <StoreContext.Provider value={value}>{props.children} </StoreContext.Provider>;
 }
-

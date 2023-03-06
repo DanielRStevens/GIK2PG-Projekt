@@ -20,14 +20,14 @@ export default function CartScreen() {
   } = state;
 
   const updateCartHandler = async (product, quantity) => {
-    const { data } = await axios.get(`http://localhost:4000/product/${product._id}`);
+    const { data } = await axios.get(`http://localhost:4000/product/:id`);
     if (data.countInStock < quantity) {
       window.alert("Product is out of stock");
       return;
     }
     ctxDispatch({
       type: "ADD_ITEM",
-      payload: { ...product, quantity },
+      payload: {...product, quantity},
     });
   };
 
