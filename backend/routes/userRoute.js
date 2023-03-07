@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var db = require("../database.js");
 const bcrypt = require("bcrypt");
+const jwt = require('jsonwebtoken');
 
 function comparePass(password, hash) {
   if (bcrypt.compare(password, hash)) {
@@ -13,9 +14,9 @@ function comparePass(password, hash) {
 
 //Post (Create)
 router.post("/register/", function (req, res, next) {
-  let username = req.body.username;
-  let password = req.body.password;
-  let email = req.body.email;
+  let username = req.username;
+  let password = req.password;
+  let email = req.email;
 
   bcrypt.hash(password, 10, function (err, hash) {
     if (err) {
@@ -36,16 +37,14 @@ router.post("/register/", function (req, res, next) {
         res.status(500).json({ error: err.message });
         return;
       }
-      res.json({
-        message: "success",
-        data: rows,
-      });
+      const token = jwt.sign({email: email, password: password}, "insecurePass")
+      return res.json({token});
     });
   });
 });
 
 // login function
-router.get("/login/", function (req, res, next) {
+router.post("/login/", function (req, res, next) {
   let password = req.body.password;
   let email = req.body.email;
 
@@ -56,15 +55,20 @@ router.get("/login/", function (req, res, next) {
       res.status(500).json({ error: err.message });
       return;
     }
+    if(typeof rows[0] === 'undefined' || rows[0] === null) {
+      res.status(500).json({ error: "That user does not exist!" });
+      return;
+    }
+
     bcrypt.compare(password, rows[0].password, function (err, status) {
       if (err) {
-        res.status(401).json({error: err.message});
+        res.status(401).json({ error: err.message });
       } else if (!status) {
         console.log("Login failed: no status.");
-        res.status(401).json({error:"Login failed."});
-    } else {
-        res.json({ message: "success" });
-        return;
+        res.status(401).json({ error: "Login failed." });
+      } else {
+        const token = jwt.sign({email: email, password: password}, "insecurePass")
+        return res.json({token});
       }
     });
   });
