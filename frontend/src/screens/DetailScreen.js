@@ -49,10 +49,10 @@ function DetailScreen() {
   const { state, dispatch: ctxDispatch } = useContext(StoreContext);
   const { cart } = state;
   const HandlerAddToCart = async () => {
-    const existItem = cart.cartItems.find((x) => x.id === product._id);
+    const existItem = cart.cartItems.find((x) => x.Id === product.Id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`http://localhost:4000/product/${id}`);
-    if (data.countInStock < quantity) {
+    if (data.data[0].countInStock < quantity) {
       window.alert("The product is currently out of stock!");
       return;
     }

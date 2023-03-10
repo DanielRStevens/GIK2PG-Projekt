@@ -18,16 +18,6 @@ function ReviewScreen() {
       setReviews(result.data.data);
     };
     fetchData();
-
-    const fetchUser = async () => {
-      for (let index = 0; index < reviews.length; index++) {
-        const result = await axios.get(`http://localhost:4000/user/${reviews[index].userId}`);
-        setReviews({...reviews, ["username"]: result.data.data[0].username});
-      }
-
-      console.log(reviews)
-    };
-    fetchUser();
   }, []);
 
   /*   var rating = 0;

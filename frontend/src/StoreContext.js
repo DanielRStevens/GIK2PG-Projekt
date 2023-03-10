@@ -15,19 +15,27 @@ function reducer(state, action) {
     case 'ADD_ITEM':
       // add to cart
       const newItem = action.payload;
+      console.log("new item");
+      console.log(newItem);
       const existItem = state.cart.cartItems.find(
-        (product) => product._id === newItem._id
+        (product) => product.Id === newItem.Id
       );
+      console.log("exist item");
+      console.log(existItem);
+
       const cartItems = existItem
         ? state.cart.cartItems.map((product) =>
-            product._id === existItem._id ? newItem : product
+            product.Id === existItem.Id ? newItem : product
           )
         : [...state.cart.cartItems, newItem];
+        
+      console.log("cart items");
+      console.log(cartItems);
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     case 'REMOVE_ITEM': {
       const cartItems = state.cart.cartItems.filter(
-        (product) => product._id !== action.payload._id
+        (product) => product.Id !== action.payload.Id
       );
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };

@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 
 //Get (Read) all reviews for a product
 router.get('/product/:id', function(req, res, next) {
-    var sql = "select * from review where productId = " + req.params.id
+    var sql = "SELECT review.id AS reviewId, rating,	reviewText,	username FROM review INNER JOIN user ON review.userId = user.id WHERE review.productId = " + req.params.id
     var params = []
     db.all(sql, params, (err, rows) => {
         if (err) {
@@ -33,7 +33,7 @@ router.get('/product/:id', function(req, res, next) {
 
 //get review by id
 router.get('/:id', function(req, res, next) {
-    var sql = "select * from reviews where id = " + req.params.id;
+    var sql = "SELECT productId, rating, reviewText, username review.userId AS userId FROM review INNER JOIN user ON review.userId = user.id WHERE review.id = " + req.params.id;
     var params = [];
     db.all(sql, params, (err, rows) => {
         if (err) {

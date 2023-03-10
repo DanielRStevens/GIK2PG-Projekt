@@ -36,9 +36,9 @@ export default function CartScreen() {
   };
 
   const checkoutHandler = () => {
-    navigate('/signin?redirect=/shipping');
+    navigate('/payment');
   };
-  
+
   return (
     <div>
       <Helmet>
@@ -54,7 +54,7 @@ export default function CartScreen() {
           ) : (
             <ListGroup>
               {cartItems.map((product) => (
-                <ListGroup.Item key={product._id}>
+                <ListGroup.Item key={product.Id}>
                   <Row className="align-items-center">
                     <Col md={2}>
                       <img
@@ -90,7 +90,6 @@ export default function CartScreen() {
                       <Button
                         onClick={() => removeItemHandler(product)}
                         variant="light"
-                        disabled={product.quantity === product.countInStock}
                       >
                         <i className="fas fa-trash"></i>
                       </Button>

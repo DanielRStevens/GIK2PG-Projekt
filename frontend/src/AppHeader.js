@@ -38,13 +38,12 @@ function AppHeader() {
       <div className="headerRight">
         <a href="/cart" className="Cart-icon">
           Cart{" "}
+          <BsFillCartFill />
           {cart.cartItems.length > 0 && (
             <Badge pill bg="danger">
               {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
             </Badge>
           )}
-          <BsFillCartFill />
-          <p className="Cart-amount">0</p>
         </a>
         <div className="Spacer"></div>
         <a href="#Help">

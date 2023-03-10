@@ -24,13 +24,13 @@ router.post("/register/", function (req, res, next) {
       return;
     }
     var sql =
-      'insert into user (username, email, password) values("' +
+      'insert into user (username, email, password, admin) values("' +
       username +
       '", "' +
       email +
       '", "' +
       hash +
-      '")';
+      '", 0)';
     var params = [];
     db.all(sql, params, (err, rows) => {
       if (err) {
@@ -48,7 +48,7 @@ router.post("/login/", function (req, res, next) {
   let password = req.body.password;
   let email = req.body.email;
 
-  var sql = 'select password from user where email ="' + email + '"';
+  var sql = 'select password, admin from user where email ="' + email + '"';
   var params = [];
   db.all(sql, params, (err, rows) => {
     if (err) {
@@ -67,7 +67,7 @@ router.post("/login/", function (req, res, next) {
         console.log("Login failed: no status.");
         res.status(401).json({ error: "Login failed." });
       } else {
-        const token = jwt.sign({email: email, password: password}, "insecurePass")
+        const token = jwt.sign({email: email, password: password, admin:rows[0].admin}, "insecurePass")
         return res.json({token});
       }
     });
@@ -91,3 +91,33 @@ router.get("/:id", function (req, res, next) {
 });
 
 module.exports = router;
+
+// confirm admin status
+router.post("/admin/", function (req, res, next) {
+  let password = req.body.password;
+  let email = req.body.email;
+
+  var sql = 'select password, admin from user where email ="' + email + '"';
+  var params = [];
+  db.all(sql, params, (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    if(typeof rows[0] === 'undefined' || rows[0] === null) {
+      res.status(500).json({ error: "That user does not exist!" });
+      return;
+    }
+
+    bcrypt.compare(password, rows[0].password, function (err, status) {
+      if (err) {
+        res.status(401).json({ error: err.message });
+      } else if (!status) {
+        console.log("Login failed: no status.");
+        res.status(401).json({ error: "Login failed." });
+      } else {
+        return res.json({admin:"hellow world"});
+      }
+    });
+  });
+});

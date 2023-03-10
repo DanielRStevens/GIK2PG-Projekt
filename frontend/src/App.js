@@ -12,6 +12,8 @@ import ReviewScreen from "./screens/ReviewScreen";
 import KlarnaScreen from "./screens/KlarnaScreen";
 import SigninScreen from "./screens/SigninScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import PaypalScreen from "./screens/PaypalScreen";
+import AdminScreen from "./screens/AdminScreen";
 
 function App() {
   return (
@@ -31,7 +33,7 @@ function App() {
           {/* Logged in customer */}
           <Route path="/product/:id/review" element={<ReviewScreen />} />
           <Route path="/order" element={<NoMatch />} />
-          <Route path="/payment" element={<KlarnaScreen />} />
+          <Route path="/payment" element={<PaypalScreen />} />
           <Route path="/product/*/create-review" element={<NoMatch />} />
           <Route path="/favorites" element={<NoMatch />} />
           <Route path="/order-history" element={<NoMatch />} />
@@ -39,7 +41,7 @@ function App() {
           <Route path="/logout" element={<NoMatch />} />
 
           {/* Admin */}
-          <Route path="/admin" element={<NoMatch />} />
+          <Route path="/admin" element={<AdminScreen />} />
           <Route path="/admin/product/*" element={<NoMatch />} />
           <Route path="/admin/deals" element={<NoMatch />} />
           <Route path="/admin/customers" element={<NoMatch />} />
