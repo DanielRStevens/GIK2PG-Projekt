@@ -14,9 +14,9 @@ function comparePass(password, hash) {
 
 //Post (Create)
 router.post("/register/", function (req, res, next) {
-  let username = req.username;
-  let password = req.password;
-  let email = req.email;
+  let username = req.body.username;
+  let password = req.body.password;
+  let email = req.body.email;
 
   bcrypt.hash(password, 10, function (err, hash) {
     if (err) {
@@ -30,7 +30,7 @@ router.post("/register/", function (req, res, next) {
       email +
       '", "' +
       hash +
-      '", 0)';
+      '", "0")';
     var params = [];
     db.all(sql, params, (err, rows) => {
       if (err) {
@@ -114,7 +114,7 @@ router.post("/admin/", function (req, res, next) {
         res.status(401).json({ error: err.message });
       } else if (!status) {
         console.log("Login failed: no status.");
-        res.status(401).json({ error: "Login failed." });
+        res.status(401).json({ error: "Unauthorized entry." });
       } else {
         return res.json({admin:"hellow world"});
       }

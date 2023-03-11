@@ -5,8 +5,10 @@ const LoggedInUser = () => {
   const user = token
     ? JSON.parse(Buffer.from(token.split(".")[1], "base64").toString()).email
     : "";
+    const admin = JSON.parse(Buffer.from(token.split(".")[1], "base64").toString()).admin;
 
-    if (JSON.parse(Buffer.from(token.split(".")[1], "base64").toString()).admin = 1){
+    console.log(Buffer.from(token.split(".")[1], "base64").toString())
+    if (admin == 1){
         return <div><a href="/admin">Admin panel</a></div>
     }
   return <div>Logged in as: {user}</div>;
