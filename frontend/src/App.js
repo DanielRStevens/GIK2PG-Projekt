@@ -4,7 +4,13 @@ import AppProductList from "./AppProductList";
 
 //import ProductScreen from './screens/ProductScreen';
 import DetailScreen from "./screens/DetailScreen";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  RouterProvider,
+  Outlet,
+  Link,
+} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { Helmet } from "react-helmet";
 import CartScreen from "./screens/CartScreen";
@@ -14,8 +20,12 @@ import SigninScreen from "./screens/SigninScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import PaypalScreen from "./screens/PaypalScreen";
 import AdminScreen from "./screens/AdminScreen";
+import ShippingAddressScreen from "./screens/ShippingAddressScreen";
+import PaymentSuccessScreen from "./screens/PaymentSuccessScreen";
+import ProductEditScreen from "./screens/ProductEditScreen";
 
 function App() {
+
   return (
     <main>
       <Container className="mt-3 mainColumn">
@@ -24,16 +34,18 @@ function App() {
           <Route path="/" element={<ProductScreen />} />
           <Route path="/product/:id" element={<DetailScreen />} />
           <Route path="/cart" element={<CartScreen />} />
-          <Route path="/signin" element={<SigninScreen/>} />
-          <Route path="/register" element={<RegisterScreen/>} />
+          <Route path="/signin" element={<SigninScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
+          <Route path="/shipping" element={<ShippingAddressScreen />} />
           <Route path="/search/*" element={<NoMatch />} />
           <Route path="/deals" element={<NoMatch />} />
           <Route path="/new" element={<NoMatch />} />
+          <Route path="/payment" element={<PaypalScreen />} />
+          <Route path="/payment/success" element={<PaymentSuccessScreen />} />
 
           {/* Logged in customer */}
           <Route path="/product/:id/review" element={<ReviewScreen />} />
           <Route path="/order" element={<NoMatch />} />
-          <Route path="/payment" element={<PaypalScreen />} />
           <Route path="/product/*/create-review" element={<NoMatch />} />
           <Route path="/favorites" element={<NoMatch />} />
           <Route path="/order-history" element={<NoMatch />} />
@@ -42,7 +54,7 @@ function App() {
 
           {/* Admin */}
           <Route path="/admin" element={<AdminScreen />} />
-          <Route path="/admin/product/*" element={<NoMatch />} />
+          <Route path="/product/:id/edit" element={<ProductEditScreen />} />
           <Route path="/admin/deals" element={<NoMatch />} />
           <Route path="/admin/customers" element={<NoMatch />} />
           <Route path="/admin/review/*" element={<NoMatch />} />
@@ -75,7 +87,7 @@ function ProductScreen() {
   );
 }
 
-function NoMatch() {
+export function NoMatch() {
   return (
     <div>
       <Helmet>

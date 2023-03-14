@@ -13,6 +13,7 @@ import placeholder from "../images/Books_Silhouette.png";
 import "../css/DetailScreen.css";
 import ReviewScreen from "./ReviewScreen";
 import Rating from "../components/rating";
+import AdminCheck from "../components/adminCheck";
 
 function DetailScreen() {
   const navigate = useNavigate();
@@ -31,9 +32,7 @@ function DetailScreen() {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(
-        `http://localhost:4000/review/product/${id}`
-      );
+      const result = await axios.get( `http://localhost:4000/review/product/${id}`);
       setReviews(result.data.data);
     };
     fetchData();
@@ -83,6 +82,7 @@ function DetailScreen() {
             <ListGroupItem>Author: {product.Author}</ListGroupItem>
             <ListGroupItem>Price: {product.Price}kr</ListGroupItem>
             <ListGroupItem>Description: {product.Description}</ListGroupItem>
+            {AdminCheck()?<ListGroupItem><a href={"/product/"+product.Id+"/edit"}>Edit product</a></ListGroupItem>:""}
           </ListGroup>
         </Col>
         <Col md={3}>

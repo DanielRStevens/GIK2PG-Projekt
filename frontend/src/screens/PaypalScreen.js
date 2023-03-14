@@ -53,7 +53,7 @@ const navigate = useNavigate();
             console.log('Capture result', actions.order.data, JSON.stringify(actions.order.data, null, 2));
 
             // Show a success message within this page, e.g.
-            navigate('/');
+            navigate('/payment/success');
           });
         }}
       />

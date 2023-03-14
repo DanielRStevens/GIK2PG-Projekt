@@ -116,7 +116,7 @@ router.post("/admin/", function (req, res, next) {
         console.log("Login failed: no status.");
         res.status(401).json({ error: "Unauthorized entry." });
       } else {
-        return res.json({admin:"hellow world"});
+        return res.status(200).json({admin:"true"});
       }
     });
   });

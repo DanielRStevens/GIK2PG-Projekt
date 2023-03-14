@@ -50,3 +50,8 @@ Create LoginScreen
 create login form
 Add email and password
 add Login button
+
+Create Shipping Screen 
+create form inputs 
+handle save shipping address 
+add checkout bar

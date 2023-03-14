@@ -8,7 +8,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Helmet } from "react-helmet";
 import placeholder from "../images/Books_Silhouette.png";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
 
@@ -33,6 +32,10 @@ export default function CartScreen() {
 
   const removeItemHandler = (product) => {
     ctxDispatch({ type: "REMOVE_ITEM", payload: product });
+  };
+
+  const emptyCartHandler = () => {
+    ctxDispatch({ type: "CLEAR_CART"});
   };
 
   const checkoutHandler = () => {
@@ -119,9 +122,17 @@ export default function CartScreen() {
                       type="button"
                       variant="primary"
                       disabled={cartItems.length === 0}
+                      className="mb-3"
                     >
                       Proceed to Checkout
-                    </Button>
+                     </Button>
+                  </div>
+                  <div>  
+                    <Button size="md"
+                            onClick={emptyCartHandler}
+                            type="button" 
+                            variant="primary"
+                            className="mb-3">Empty Cart</Button>
                   </div>
                 </ListGroup.Item>
               </ListGroup>
